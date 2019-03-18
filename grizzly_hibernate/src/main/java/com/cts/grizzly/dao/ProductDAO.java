@@ -14,6 +14,9 @@ public interface ProductDAO {
 	
 	public Product getProductByID(String id);
 	public String deleteProductByID(String id);
+	public String blockProductByID(String id);
+	public String unblockProductByID(String id);
+
 
 
 

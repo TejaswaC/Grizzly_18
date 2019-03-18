@@ -72,6 +72,33 @@ System.out.println("Produt Deleted");
 
 			return modelAndView;
 			}
+	
+	
+	@RequestMapping(value="blockProduct.html")						//PostMapping(value="login.html", method= RequestMethod.GET)
+	public ModelAndView blockProduct(@RequestParam("id") String id){
+		ModelAndView modelAndView = new ModelAndView();
+		
+		productService.blockProductByID(id);
+		
+System.out.println("Produt Blocked");
+			
+
+
+			return modelAndView;
+			}
+	
+	@RequestMapping(value="unblockProduct.html")						//PostMapping(value="login.html", method= RequestMethod.GET)
+	public ModelAndView unblockProduct(@RequestParam("id") String id){
+		ModelAndView modelAndView = new ModelAndView();
+		
+		productService.unblockProductByID(id);
+		
+System.out.println("Produt unBlocked");
+			
+
+
+			return modelAndView;
+			}
 			
 			
 

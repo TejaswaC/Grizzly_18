@@ -108,6 +108,50 @@ public class ProductDAOImpl implements ProductDAO {
 			return product;
 			}
 
+
+	@Transactional
+	public String blockProductByID(String id) {
+		// TODO Auto-generated method stub
+		Session session = null;
+		//String query = "from Empl WHERE empID=?";
+		//org.hibernate.query.Query<Employee> query2=null;
+
+		// TODO Auto-generated method stub
+		
+			session = sessionFactory.getCurrentSession();
+			Product product = session.load(Product.class, id);
+			product.setBlockStatus("2");
+			session.update(product);
+			//query2=session.createQuery(query);
+			//query2.setParameter(0, Id);
+			//List<Employee> list = query2.getResultList();
+
+			System.out.println("Inside DAO -product blocked");
+			
+			return "Product Blocked";	}
+
+
+	@Override
+	public String unblockProductByID(String id) {
+		// TODO Auto-generated method stub
+		Session session = null;
+		//String query = "from Empl WHERE empID=?";
+		//org.hibernate.query.Query<Employee> query2=null;
+
+		// TODO Auto-generated method stub
+		
+			session = sessionFactory.getCurrentSession();
+			Product product = session.load(Product.class, id);
+			product.setBlockStatus("1");
+			session.update(product);
+			//query2=session.createQuery(query);
+			//query2.setParameter(0, Id);
+			//List<Employee> list = query2.getResultList();
+
+			System.out.println("Inside DAO -Product unblocked");
+			
+			return "Product Unblocked";	}
+
 	}
 	
 	

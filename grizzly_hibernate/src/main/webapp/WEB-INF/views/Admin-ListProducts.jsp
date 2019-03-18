@@ -129,10 +129,12 @@ ${user.designation}
                                                   &emsp;&emsp;
                                                       <select name="select-city" onchange="location = this.value;">
 <option value="">Select-Sorting Type</option>
- <option value="http://localhost:8020/GrizzlyStore/SortByRatingServlet?order=LowToHigh">Low To High</option>
- <option value="http://localhost:8020/GrizzlyStore/SortByRatingServlet?order=HighToLow">High To Low</option>
+ <option value="sort.html?order=LowToHigh">Low To High</option>
+ <option value="sort.html?order=HighToLow">High To Low</option>
 </select>  &emsp;&emsp;&emsp;&emsp;&emsp;
 </form>
+    <form action="AddProduct.html" method="POST">
+
 		
 												<input id="prodId" name="userId" type="hidden" value=${user.userId}>   
                                                                 <button class="btn btn-dark form-rounded" style="width:30%; position: absolute; bottom: 50px; right: 20px;">Addd Product
@@ -185,7 +187,7 @@ ${user.designation}
                               <a href="viewproduct.html?id=${product.id}" class="btn btn-secondary form-rounded"  width="50px"> &emsp;View&emsp; 
                               </a>&emsp;&emsp;
 								<input id="prodId" name="userId" type="hidden" value=${user.userId}>
-<c:when ${product.blockStatus}=1>
+<c:when test =${product.blockStatus = "1"}>
                               <a  href="blockProduct.html?id=${product.id }" class="btn btn-secondary form-rounded">&nbsp;Block&nbsp; 
                               </a>    </c:when>           
                               

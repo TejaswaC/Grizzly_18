@@ -44,6 +44,18 @@ public class ProductServiceImpl implements ProductService {
 		return productDAO.deleteProductByID(id);
 	}
 
+	@Override
+	public String blockProductByID(String id) {
+		// TODO Auto-generated method stub
+		return productDAO.blockProductByID(id);
+	}
+
+	@Override
+	public String unProductByID(String id) {
+		// TODO Auto-generated method stub
+		return productDAO.unblockProductByID(id);
+	}
+
 	
 		
 	

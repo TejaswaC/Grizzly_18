@@ -10,4 +10,7 @@ public interface ProductService {
 	public List<Product> viewProducts();
 	public Product getProductByID(String id);
 	public String deleteProductByID(String id);
+	public String blockProductByID(String id);
+	public String unProductByID(String id);
+
 }

@@ -33,10 +33,18 @@ public class Product {
 
 	private String offer;
 	
-	@Column(name="blockStatus")
+	@Column(name="blockStatus", columnDefinition="varchar(255) default 1")
 
 	private String blockStatus;
 	
+	public String getBlockStatus() {
+		return blockStatus;
+	}
+
+	public void setBlockStatus(String blockStatus) {
+		this.blockStatus = blockStatus;
+	}
+
 	public Product() {
 		super();
 	}
@@ -105,8 +113,15 @@ public class Product {
 		this.offer = offer;
 	}
 
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", category=" + category + ", name=" + name + ", description=" + description
+				+ ", price=" + price + ", brand=" + brand + ", rating=" + rating + ", offer=" + offer + ", blockStatus="
+				+ blockStatus + "]";
+	}
+
 	public Product(String id, String category, String name, String description, float price, String brand,
-			String rating, String offer) {
+			String rating, String offer, String blockStatus) {
 		super();
 		this.id = id;
 		this.category = category;
@@ -116,12 +131,8 @@ public class Product {
 		this.brand = brand;
 		this.rating = rating;
 		this.offer = offer;
+		this.blockStatus = blockStatus;
 	}
 
-	@Override
-	public String toString() {
-		return "Product [id=" + id + ", category=" + category + ", name=" + name + ", description=" + description
-				+ ", price=" + price + ", brand=" + brand + ", rating=" + rating + ", offer=" + offer + "]";
-	}
 	
 }
